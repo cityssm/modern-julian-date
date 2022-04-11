@@ -1,5 +1,23 @@
 import * as assert from "assert";
-import { toModernJulianDate } from "../index.js";
+import { getDayOfYear, toModernJulianDate } from "../index.js";
+describe("getDayOfYear()", () => {
+    describe("startAtZero = true", () => {
+        it("Converts 2022-01-01 to 0", () => {
+            assert.strictEqual(getDayOfYear(new Date(2022, 1 - 1, 1), true), 0);
+        });
+        it("Converts 2022-12-31 to 364", () => {
+            assert.strictEqual(getDayOfYear(new Date(2022, 12 - 1, 31), true), 364);
+        });
+    });
+    describe("startAtZero = false", () => {
+        it("Converts 2022-01-01 to 1", () => {
+            assert.strictEqual(getDayOfYear(new Date(2022, 1 - 1, 1), false), 1);
+        });
+        it("Converts 2022-12-31 to 365", () => {
+            assert.strictEqual(getDayOfYear(new Date(2022, 12 - 1, 31), false), 365);
+        });
+    });
+});
 describe("toModernJulianDate()", () => {
     const testCases = [
         [new Date(2022, 1 - 1, 1, 23, 59, 59),
