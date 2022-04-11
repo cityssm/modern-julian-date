@@ -1,5 +1,5 @@
 {
-  "name": "modern-julian-date",
+  "name": "@cityssm/modern-julian-date",
   "version": "0.1.0",
   "description": "Converts a regular JavaScript date to the modern Julian date format YYYYDDD.",
   "type": "module",
