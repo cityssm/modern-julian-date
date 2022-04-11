@@ -1,5 +1,6 @@
 # Modern Julian Date
 
+[![Codacy grade](https://img.shields.io/codacy/grade/a5309114d6e24e718063643cb5153e02)](https://app.codacy.com/gh/cityssm/modern-julian-date/dashboard)
 [![npm (scoped)](https://img.shields.io/npm/v/@cityssm/modern-julian-date)](https://www.npmjs.com/package/@cityssm/modern-julian-date)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/modern-julian-date)](https://codeclimate.com/github/cityssm/modern-julian-date)
 [![Code Climate coverage](https://img.shields.io/codeclimate/coverage/cityssm/modern-julian-date)](https://codeclimate.com/github/cityssm/modern-julian-date)
