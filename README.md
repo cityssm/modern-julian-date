@@ -1,2 +1,3 @@
 # modern-julian-date
-Converts a regular JavaScript date to the modern Julain date format YYYYDDD.
+
+Converts a regular JavaScript date to the modern Julian date format YYYYDDD.
