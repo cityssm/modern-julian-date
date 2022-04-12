@@ -1,6 +1,7 @@
 .git
 .github
 .nyc_output
+assets
 coverage
 node_modules
 test
