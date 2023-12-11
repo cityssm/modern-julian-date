@@ -6,7 +6,8 @@ coverage
 node_modules
 test
 
-.atomignore
+_config.yml
+.deepsource.toml
 .eslintignore
 .eslintrc.json
 .gitignore
