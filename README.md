@@ -23,7 +23,8 @@ import {
 } from "@cityssm/modern-julian-date";
 
 /*
- * toModernJulianDate() returns date strings in YYYYDDD format.
+ * toModernJulianDate()
+ * returns date strings in YYYYDDD format.
  */
 
 console.log( toModernJulianDate(new Date(2022, 1 - 1, 1)) );
@@ -36,7 +37,8 @@ console.log( toModernJulianDate(new Date(2020, 12 - 1, 31)) );
 // => '2020366'
 
 /*
- * toShortModernJulianDate() returns date strings in YYDDD format.
+ * toShortModernJulianDate()
+ * returns date strings in YYDDD format.
  */
 
 console.log( toShortModernJulianDate(new Date(2022, 1 - 1, 1)) );
