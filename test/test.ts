@@ -1,7 +1,8 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
 /* eslint-disable sonarjs/no-identical-expressions, unicorn/numeric-separators-style */
 
 import assert from 'node:assert'
+import { describe, it } from 'node:test'
 
 import {
   getDayOfYear,
@@ -9,29 +10,29 @@ import {
   toShortModernJulianDate
 } from '../index.js'
 
-describe('getDayOfYear()', () => {
-  describe('startAtZero = true', () => {
-    it('Converts 2022-01-01 to 0', () => {
+await describe('getDayOfYear()', async () => {
+  await describe('startAtZero = true', async () => {
+    await it('Converts 2022-01-01 to 0', async () => {
       assert.strictEqual(getDayOfYear(new Date(2022, 1 - 1, 1), true), 0)
     })
 
-    it('Converts 2022-12-31 to 364', () => {
+    await it('Converts 2022-12-31 to 364', async () => {
       assert.strictEqual(getDayOfYear(new Date(2022, 12 - 1, 31), true), 364)
     })
   })
 
-  describe('startAtZero = false', () => {
-    it('Converts 2022-01-01 to 1', () => {
+  await describe('startAtZero = false', async () => {
+    await it('Converts 2022-01-01 to 1', async () => {
       assert.strictEqual(getDayOfYear(new Date(2022, 1 - 1, 1), false), 1)
     })
 
-    it('Converts 2022-12-31 to 365', () => {
+    await it('Converts 2022-12-31 to 365', async () => {
       assert.strictEqual(getDayOfYear(new Date(2022, 12 - 1, 31), false), 365)
     })
   })
 })
 
-describe('toModernJulianDate()', () => {
+await describe('toModernJulianDate()', async () => {
   const testCases = [
     // non-leap year
     [new Date(2022, 1 - 1, 1, 23, 59, 59), '2022001'],
@@ -45,17 +46,17 @@ describe('toModernJulianDate()', () => {
   ]
 
   for (const testCase of testCases) {
-    it(`Converts ${testCase[0].toLocaleString()} to ${testCase[1].toString()}`, () => {
+    await it(`Converts ${testCase[0].toLocaleString()} to ${testCase[1].toString()}`, async () => {
       assert.strictEqual(toModernJulianDate(testCase[0] as Date), testCase[1])
     })
   }
 })
 
-describe('toShortModernJulianDate()', () => {
+await describe('toShortModernJulianDate()', async () => {
   const testCases = [[new Date(2000, 1 - 1, 1), '00001']]
 
   for (const testCase of testCases) {
-    it(`Converts ${testCase[0].toLocaleString()} to ${testCase[1].toString()}`, () => {
+    await it(`Converts ${testCase[0].toLocaleString()} to ${testCase[1].toString()}`, async () => {
       assert.strictEqual(
         toShortModernJulianDate(testCase[0] as Date),
         testCase[1]

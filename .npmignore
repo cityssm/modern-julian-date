@@ -9,9 +9,9 @@ test
 _config.yml
 .deepsource.toml
 .eslintignore
-.eslintrc.json
 .gitignore
 .npmignore
 .prettierignore
 .prettierrc.json
+eslint.config.*
 tsconfig.json

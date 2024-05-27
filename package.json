@@ -8,8 +8,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "test": "mocha",
-    "coverage": "c8 mocha"
+    "test": "node --test",
+    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,7 @@
   },
   "homepage": "https://github.com/cityssm/modern-julian-date#readme",
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.10.4",
-    "eslint-config-cityssm": "^1.2.0"
+    "@types/node": "^20.12.12",
+    "eslint-config-cityssm": "^3.2.0"
   }
 }
