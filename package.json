@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/cityssm/modern-julian-date#readme",
   "devDependencies": {
-    "@types/node": "^20.12.12",
+    "@types/node": "^22.0.0",
     "eslint-config-cityssm": "^3.2.0"
   }
 }
