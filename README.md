@@ -18,13 +18,14 @@ npm install @cityssm/modern-julian-date
 
 ```javascript
 import {
+  fromModernJulianDate,
   toModernJulianDate,
   toShortModernJulianDate
 } from "@cityssm/modern-julian-date";
 
 /*
  * toModernJulianDate()
- * returns date strings in YYYYDDD format.
+ * Returns date strings in YYYYDDD format.
  */
 
 console.log( toModernJulianDate(new Date(2022, 1 - 1, 1)) );
@@ -38,9 +39,17 @@ console.log( toModernJulianDate(new Date(2020, 12 - 1, 31)) );
 
 /*
  * toShortModernJulianDate()
- * returns date strings in YYDDD format.
+ * Returns date strings in YYDDD format.
  */
 
 console.log( toShortModernJulianDate(new Date(2022, 1 - 1, 1)) );
 // => '22001'
+
+/*
+ * fromModernJulianDate()
+ * Returns Date objects.
+ */
+
+console.log( fromModernJulianDate('2020366') )
+// => 'Thu Dec 31 2020 00:00:00 GMT-0500 (Eastern Standard Time)'
 ```

@@ -37,4 +37,37 @@ export function toShortModernJulianDate(date: Date): string {
   return toModernJulianDate(date).slice(2)
 }
 
+/**
+ * Converts a modern Julian date into a Javascript Date object.
+ * ex. '2023001' => 2023-01-01
+ * @param modernJulianDate - A five-digit (short) or seven-digit modern Julian date. Note that five-digit dates will be assumed to be in the current century.
+ * @returns Date object.
+ */
+export function fromModernJulianDate(modernJulianDate: string): Date {
+  let sevenDigitModernJulianDate = modernJulianDate
+
+  if (modernJulianDate.length === 5) {
+    sevenDigitModernJulianDate =
+      Math.floor(new Date().getFullYear() / 100).toString() + modernJulianDate
+  }
+
+  if (sevenDigitModernJulianDate.length !== 7) {
+    throw new Error(`Invalid modern Julian date: ${modernJulianDate}`)
+  }
+
+  const year = Number.parseInt(sevenDigitModernJulianDate.slice(0, 4))
+  const days = Number.parseInt(sevenDigitModernJulianDate.slice(4))
+
+  if (Number.isNaN(year) || Number.isNaN(days) || days > 366) {
+    throw new TypeError(`Invalid modern Julian date: ${modernJulianDate}`)
+  }
+
+  // eslint-disable-next-line sonarjs/no-identical-expressions
+  const date = new Date(year, 1 - 1, 1)
+
+  date.setDate(days)
+
+  return date
+}
+
 export default toModernJulianDate
