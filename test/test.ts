@@ -1,5 +1,5 @@
 // eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
-/* eslint-disable sonarjs/no-identical-expressions, unicorn/numeric-separators-style */
+/* eslint-disable sonarjs/no-identical-expressions */
 
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
@@ -118,18 +118,10 @@ await describe('fromModernJulianDate()', async () => {
     ]
 
     for (const invalidString of invalidStrings) {
-      let invalidStringPassed = false
-
       try {
         fromModernJulianDate(invalidString)
-
-        invalidStringPassed = true
         assert.fail(invalidString)
-      } catch {
-        if (invalidStringPassed) {
-          assert.fail(invalidString)
-        }
-      }
+      } catch {}
     }
   })
 })

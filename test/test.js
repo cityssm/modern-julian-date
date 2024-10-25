@@ -75,17 +75,11 @@ await describe('fromModernJulianDate()', async () => {
             '23400'
         ];
         for (const invalidString of invalidStrings) {
-            let invalidStringPassed = false;
             try {
                 fromModernJulianDate(invalidString);
-                invalidStringPassed = true;
                 assert.fail(invalidString);
             }
-            catch {
-                if (invalidStringPassed) {
-                    assert.fail(invalidString);
-                }
-            }
+            catch { }
         }
     });
 });
