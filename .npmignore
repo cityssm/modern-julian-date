@@ -1,6 +1,7 @@
 .git
 .github
 .nyc_output
+
 assets
 coverage
 node_modules
@@ -8,7 +9,6 @@ test
 
 _config.yml
 .deepsource.toml
-.eslintignore
 .gitignore
 .npmignore
 .prettierignore

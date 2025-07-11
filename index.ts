@@ -2,7 +2,7 @@
  * Returns the day of the year.
  * @param date - Date object.
  * @param startAtZero - Whether the day of the year should be zero-based.
- * @returns Day of year,
+ * @returns Day of year.
  */
 export function getDayOfYear(date: Date, startAtZero = false): number {
   const year = date.getFullYear()
@@ -20,7 +20,7 @@ export function getDayOfYear(date: Date, startAtZero = false): number {
  * Returns a date string in the modern Julian format. (i.e. YYYYDDD)
  * ex. 2023-01-01 => '2023001'
  * @param date - Date object.
- * @returns Date string in modern Julian format
+ * @returns Date string in modern Julian format.
  */
 export function toModernJulianDate(date: Date): string {
   const dayOfYear = getDayOfYear(date)

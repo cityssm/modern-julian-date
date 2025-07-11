@@ -1,7 +1,8 @@
 import cityssmConfig, { cspellWords } from 'eslint-config-cityssm'
 import tseslint from 'typescript-eslint'
 
-export const config = tseslint.config(...cityssmConfig, {
+export const config = tseslint.config(cityssmConfig, {
+  files: ['**/*.ts'],
   rules: {
     '@cspell/spellchecker': [
       'warn',

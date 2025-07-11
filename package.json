@@ -2,19 +2,6 @@
   "name": "@cityssm/modern-julian-date",
   "version": "1.0.1",
   "description": "Converts a regular JavaScript date to the modern Julian date format YYYYDDD.",
-  "type": "module",
-  "exports": "./index.js",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "scripts": {
-    "test": "node --test",
-    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cityssm/modern-julian-date.git"
-  },
   "keywords": [
     "julian",
     "date",
@@ -24,15 +11,28 @@
     "yyyyddd",
     "yyddd"
   ],
-  "author": "The Corporation of the City of Sault Ste. Marie",
-  "license": "MIT",
+  "homepage": "https://github.com/cityssm/modern-julian-date#readme",
   "bugs": {
     "url": "https://github.com/cityssm/modern-julian-date/issues"
   },
-  "homepage": "https://github.com/cityssm/modern-julian-date#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cityssm/modern-julian-date.git"
+  },
+  "license": "MIT",
+  "author": "The Corporation of the City of Sault Ste. Marie",
+  "type": "module",
+  "exports": "./index.js",
+  "scripts": {
+    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test",
+    "test": "node --test"
+  },
   "devDependencies": {
-    "@types/node": "^22.8.0",
-    "eslint-config-cityssm": "^13.2.0",
+    "@types/node": "^24.0.13",
+    "eslint-config-cityssm": "^26.0.0",
     "prettier-config-cityssm": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

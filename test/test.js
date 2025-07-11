@@ -1,3 +1,5 @@
+// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
+/* eslint-disable sonarjs/no-identical-expressions */
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
 import { fromModernJulianDate, getDayOfYear, toModernJulianDate, toShortModernJulianDate } from '../index.js';
@@ -21,9 +23,11 @@ await describe('getDayOfYear()', async () => {
 });
 await describe('toModernJulianDate()', async () => {
     const testCases = [
+        // non-leap year
         [new Date(2022, 1 - 1, 1, 23, 59, 59), '2022001'],
         [new Date(2022, 3 - 1, 1), '2022060'],
         [new Date(2022, 12 - 1, 31), '2022365'],
+        // leap-year
         [new Date(2020, 1 - 1, 1, 23, 59, 59), '2020001'],
         [new Date(2020, 3 - 1, 1), '2020061'],
         [new Date(2020, 12 - 1, 31), '2020366']
