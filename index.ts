@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+
+import { millisecondsInOneDay } from '@cityssm/to-millis'
+
 /**
  * Returns the day of the year.
  * @param date - Date object.
@@ -11,8 +15,9 @@ export function getDayOfYear(date: Date, startAtZero = false): number {
   const givenDate = new Date(year, date.getMonth(), date.getDate())
 
   return (
-    Math.round((givenDate.getTime() - januaryFirst.getTime()) / 86_400_000) +
-    (startAtZero ? 0 : 1)
+    Math.round(
+      (givenDate.getTime() - januaryFirst.getTime()) / millisecondsInOneDay
+    ) + (startAtZero ? 0 : 1)
   )
 }
 
@@ -55,8 +60,8 @@ export function fromModernJulianDate(modernJulianDate: string): Date {
     throw new Error(`Invalid modern Julian date: ${modernJulianDate}`)
   }
 
-  const year = Number.parseInt(sevenDigitModernJulianDate.slice(0, 4))
-  const days = Number.parseInt(sevenDigitModernJulianDate.slice(4))
+  const year = Number.parseInt(sevenDigitModernJulianDate.slice(0, 4), 10)
+  const days = Number.parseInt(sevenDigitModernJulianDate.slice(4), 10)
 
   if (Number.isNaN(year) || Number.isNaN(days) || days > 366) {
     throw new TypeError(`Invalid modern Julian date: ${modernJulianDate}`)

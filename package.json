@@ -21,16 +21,25 @@
   },
   "license": "MIT",
   "author": "The Corporation of the City of Sault Ste. Marie",
+  "sideEffects": false,
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.*"
+  ],
   "scripts": {
     "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test",
     "test": "node --test"
   },
+  "dependencies": {
+    "@cityssm/to-millis": "^1.0.1"
+  },
   "devDependencies": {
-    "@types/node": "^24.0.13",
-    "eslint-config-cityssm": "^26.0.0",
-    "prettier-config-cityssm": "^1.0.0"
+    "@types/node": "^26.2.0",
+    "eslint-config-cityssm": "^47.0.0",
+    "prettier-config-cityssm": "^2.1.3"
   },
   "engines": {
     "node": ">=18.0.0"

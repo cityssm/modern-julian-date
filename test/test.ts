@@ -1,4 +1,4 @@
-// eslint-disable-next-line @eslint-community/eslint-comments/disable-enable-pair
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 /* eslint-disable sonarjs/no-identical-expressions */
 
 import assert from 'node:assert'
@@ -103,7 +103,11 @@ await describe('fromModernJulianDate()', async () => {
     const validStrings = ['2023004', '78123']
 
     for (const validString of validStrings) {
-      fromModernJulianDate(validString)
+      try {
+        fromModernJulianDate(validString)
+      } catch {
+        assert.fail(validString)
+      }
     }
   })
 

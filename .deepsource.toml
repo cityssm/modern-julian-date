@@ -7,6 +7,3 @@ name = "javascript"
   environment = [
     "nodejs"
   ]
-
-[[analyzers]]
-name = "test-coverage"
